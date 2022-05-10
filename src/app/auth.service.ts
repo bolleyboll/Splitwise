@@ -32,9 +32,9 @@ export class AuthService {
   //     httpOptions
   //   );
   // }
-  // patRegister(pat) {
-  //   return this.http.post("http://localhost:8080/patient/signup", pat);
-  // }
+  patRegister(user) {
+    return this.http.post("http://localhost:8080/register", user);
+  }
   // orgRegister(org) {
   //   return this.http.post("http://localhost:8080/org/signup", org);
   // }
