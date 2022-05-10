@@ -2,12 +2,12 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { User } from "./model/User";
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    Authorization: "someToken",
-  }),
-  withCredentials: true,
-};
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//     Authorization: "someToken",
+//   }),
+//   withCredentials: true,
+// };
 
 @Injectable({
   providedIn: "root",
@@ -26,7 +26,7 @@ export class AuthService {
   //   );
   // }
   signIn(login) {
-    return this.http.post("http://localhost:8080/signin", login, httpOptions);
+    return this.http.post("http://localhost:8080/login", login);
   }
   patRegister(user) {
     return this.http.post("http://localhost:8080/register", user);

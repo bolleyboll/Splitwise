@@ -12,12 +12,10 @@ import { User } from "../model/User";
 export class LoginComponent implements OnInit {
   currentUser: User;
   login: Login;
-  roledata: String;
   errorFlag: boolean;
 
   constructor(public auth: AuthService, public router: Router) {
     this.login = new Login();
-    this.roledata = "";
   }
 
   ngOnInit(): void {}
@@ -30,7 +28,8 @@ export class LoginComponent implements OnInit {
       } else {
         this.auth.currentuser = res;
         this.auth.isLoggedIn = true;
-        this.router.navigateByUrl("dashboard");
+        console.log(res);
+        this.router.navigateByUrl("/dashboard");
       }
     });
     this.login = new Login();
