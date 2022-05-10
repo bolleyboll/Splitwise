@@ -1,15 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { AuthService } from "../auth.service";
+import { Login } from "../model/Login";
+import { User } from "../model/User";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit {
+  currentUser: User;
+  login: Login;
+  roledata: String;
+  errorFlag: boolean;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(public auth: AuthService, public router: Router) {
+    this.login = new Login();
+    this.roledata = "";
   }
 
+  ngOnInit(): void {}
+
+  loginSubmit(loginForm) {
+    this.errorFlag = false;
+    this.auth.signIn(this.login).subscribe((res: any) => {
+      if (res === null) {
+        this.errorFlag = true;
+      } else {
+        this.auth.currentuser = res;
+        this.auth.isLoggedIn = true;
+        this.router.navigateByUrl("dashboard");
+      }
+    });
+    this.login = new Login();
+    loginForm.form.markAsPristine();
+  }
 }

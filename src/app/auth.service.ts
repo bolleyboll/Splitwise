@@ -25,13 +25,9 @@ export class AuthService {
   //     httpOptions
   //   );
   // }
-  // signInPat(login) {
-  //   return this.http.post(
-  //     "http://localhost:8080/patient/signin",
-  //     login,
-  //     httpOptions
-  //   );
-  // }
+  signIn(login) {
+    return this.http.post("http://localhost:8080/signin", login, httpOptions);
+  }
   patRegister(user) {
     return this.http.post("http://localhost:8080/register", user);
   }
