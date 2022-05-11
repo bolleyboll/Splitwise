@@ -1,17 +1,15 @@
 export class Expense {
-	userId: number;
+	expenseId: number;
 	name: String;
-	password: String;
-	email: String;
-	username: String;
-	groups: String;
+	amount: number;
+	forGroup: String;
+	splitBetween: string;
 	constructor() {
-	  this.userId = 0;
+	  this.expenseId = 0;
 	  this.name = "";
-	  this.password = "";
-	  this.email = "";
-	  this.username = "";
-	  this.groups = "";
+	  this.amount = 0.0;
+	  this.forGroup = "";
+	  this.splitBetween = "";
 	}
   }
   

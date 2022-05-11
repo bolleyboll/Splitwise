@@ -11,6 +11,10 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { GroupComponent } from './group/group.component';
+import { NewGroupComponent } from './new-group/new-group.component';
+import { AboutComponent } from './about/about.component';
+import { NewExpenseComponent } from './new-expense/new-expense.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     IndexComponent,
     RegisterComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    GroupComponent,
+    NewGroupComponent,
+    AboutComponent,
+    NewExpenseComponent
   ],
   imports: [
     BrowserModule,
