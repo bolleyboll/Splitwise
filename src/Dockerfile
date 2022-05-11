@@ -13,4 +13,4 @@ CMD ["npm", "start"]
 
 FROM nginx:alpine
 EXPOSE 80
-COPY --from=builder app/dist/VaccinedB usr/share/nginx/html
+COPY --from=builder app/dist/splitwise usr/share/nginx/html
