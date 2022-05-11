@@ -27,6 +27,7 @@ export class RegisterComponent implements OnInit {
     this.errorFlag = false;
     this.successFlag = false;
     this.user.userId = Math.floor(Math.random() * (999 - 100 + 1) + 100);
+    this.user.groups = "";
     this.auth.patRegister(this.user).subscribe((res: any) => {
       if (res === null) {
         this.errorFlag = true;

@@ -50,9 +50,9 @@ export class AuthService {
   // showVaccinesOrgName() {
   //   return this.http.get("http://localhost:8080/partners");
   // }
-  // getOrg(id) {
-  //   return this.http.get("http://localhost:8080/org/" + id);
-  // }
+  getGroups(username) {
+    return this.http.get("http://localhost:8080/user/group/" + username);
+  }
   // addVaccine(vaccine: Vaccine) {
   //   return this.http.post(
   //     "http://localhost:8080/vaccine/add",
@@ -66,9 +66,9 @@ export class AuthService {
   //     httpOptions
   //   );
   // }
-  // getVacc(id) {
-  //   return this.http.get("http://localhost:8080/vaccine/id/" + id);
-  // }
+  getGroup(id) {
+    return this.http.get("http://localhost:8080/group/" + id);
+  }
   // getVaccineByOrgId(id) {
   //   return this.http.get(
   //     "http://localhost:8080/org/" + id + "/vaccines",
