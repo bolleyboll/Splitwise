@@ -1,2 +1,2 @@
 [localhost]
-172.16.132.162 ansible_user=patro
+127.0.0.1 ansible_user=patro
