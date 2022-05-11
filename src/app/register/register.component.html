@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="text-center my-5">Patient Registration Form</h2>
+  <h2 class="text-center my-5">New USer Registration Form</h2>
   <form
     (ngSubmit)="patientSubmit(patRegForm)"
     #patRegForm="ngForm"
@@ -89,7 +89,7 @@
     </div>
     <button
       type="submit"
-      class="btn btn-primary"
+      class="btn btn-primary mt-3"
       [disabled]="patRegForm.pristine || patRegForm.invalid"
     >
       Submit

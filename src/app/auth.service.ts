@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { User } from "./model/User";
+import { Group } from "./model/Group";
 
 // const httpOptions = {
 //   headers: new HttpHeaders({
@@ -15,16 +16,15 @@ import { User } from "./model/User";
 export class AuthService {
   currentuser: User = null;
   isLoggedIn: Boolean = false;
+  currentgroup: String;
+  curGrp: Group;
+  groups: Group[];
 
   constructor(public http: HttpClient) {}
 
-  // signInOrg(login) {
-  //   return this.http.post(
-  //     "http://localhost:8080/org/signin",
-  //     login,
-  //     httpOptions
-  //   );
-  // }
+  getExpenses(id) {
+    return this.http.get("http://localhost:8080/group/expenses/" + id);
+  }
   signIn(login) {
     return this.http.post("http://localhost:8080/login", login);
   }
