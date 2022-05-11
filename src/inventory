@@ -1,0 +1,2 @@
+[localhost]
+172.16.132.162 ansible_user=patro
