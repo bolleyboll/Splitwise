@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../auth.service";
 import { Expense } from "../model/Expense";
 import { Group } from "../model/Group";
-import { Split } from "../model/Split";
 
 @Component({
   selector: "app-group",
@@ -37,9 +36,6 @@ export class GroupComponent implements OnInit {
       console.log(this.expenses);
 
       this.expenses.forEach((exp) => {
-        let s = new Split();
-        s.name = exp.name;
-        s.amount = exp.amount;
         let arr = exp.splitBetween.split(", ");
 
         for (let i = 0; i < arr.length; i++) {
@@ -62,9 +58,6 @@ export class GroupComponent implements OnInit {
           }
           this.split[i] = name + " " + amt;
         }
-
-        // let str = JSON.parse(exp.splitBetween);
-        // this.split.push();
       });
     });
   }

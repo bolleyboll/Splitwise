@@ -31,9 +31,9 @@ export class AuthService {
   patRegister(user) {
     return this.http.post("http://localhost:8080/register", user);
   }
-  // orgRegister(org) {
-  //   return this.http.post("http://localhost:8080/org/signup", org);
-  // }
+  groupRegister(grp) {
+    return this.http.post("http://localhost:8080/group/create", grp);
+  }
   // patUpdate(pat) {
   //   return this.http.put(
   //     "http://localhost:8080/patient/update",
