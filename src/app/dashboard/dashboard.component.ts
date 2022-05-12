@@ -8,7 +8,7 @@ import { Group } from "../model/Group";
   styleUrls: ["./dashboard.component.css"],
 })
 export class DashboardComponent implements OnInit {
-  groupsList: String[];
+  groupsList: string[];
 
   constructor(public auth: AuthService) {
     this.auth.groups = [];
@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  groupDet(i: String) {
+  groupDet(i: string) {
     this.auth.currentgroup = i;
   }
 }

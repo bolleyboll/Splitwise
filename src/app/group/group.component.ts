@@ -10,8 +10,8 @@ import { Group } from "../model/Group";
 })
 export class GroupComponent implements OnInit {
   grp: Group;
-  members: String[];
-  mem: String;
+  members: string[];
+  mem: string;
   expenses: Expense[];
   split: string[];
 

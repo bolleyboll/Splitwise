@@ -1,8 +1,8 @@
 export class Expense {
 	expenseId: number;
-	name: String;
+	name: string;
 	amount: number;
-	forGroup: String;
+	forGroup: string;
 	splitBetween: string;
 	constructor() {
 	  this.expenseId = 0;

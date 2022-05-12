@@ -16,7 +16,7 @@ import { Group } from "./model/Group";
 export class AuthService {
   currentuser: User = null;
   isLoggedIn: Boolean = false;
-  currentgroup: String;
+  currentgroup: string;
   curGrp: Group;
   groups: Group[];
 
@@ -34,16 +34,12 @@ export class AuthService {
   groupRegister(grp) {
     return this.http.post("http://localhost:8080/group/create", grp);
   }
-  // patUpdate(pat) {
-  //   return this.http.put(
-  //     "http://localhost:8080/patient/update",
-  //     pat,
-  //     httpOptions
-  //   );
-  // }
-  // showPartners() {
-  //   return this.http.get("http://localhost:8080/partners");
-  // }
+  newExpense(exp) {
+    return this.http.post("http://localhost:8080/expense/add", exp);
+  }
+  getAllUsers() {
+    return this.http.get("http://localhost:8080/users");
+  }
   // showVaccines() {
   //   return this.http.get("http://localhost:8080/vaccines");
   // }
@@ -75,12 +71,11 @@ export class AuthService {
   //     httpOptions
   //   );
   // }
-  // getVaccD(disease) {
-  //   return this.http.get(
-  //     "http://localhost:8080/vaccine/disease/" + disease,
-  //     httpOptions
-  //   );
-  // }
+  addUserToGrp(username, groupId) {
+    return this.http.get(
+      "http://localhost:8080/group/add/" + username + "/" + groupId
+    );
+  }
   // getDistinctDisease() {
   //   return this.http.get("http://localhost:8080/distinct/disease");
   // }
