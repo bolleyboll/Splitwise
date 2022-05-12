@@ -10,13 +10,6 @@ pipeline {
                 git branch: 'main', credentialsId: 'cred-github', url: 'https://github.com/bolleyboll/Splitwise.git'
             }
         }
-        stage('Maven Build') {
-            steps {
-                script{
-                    sh 'mvn clean install package'
-                }
-            }
-        }
         stage('Docker Image Build') {
             steps {
                 script{
