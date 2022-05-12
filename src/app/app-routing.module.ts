@@ -7,6 +7,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { GroupComponent } from "./group/group.component";
 import { NewGroupComponent } from "./new-group/new-group.component";
 import { AboutComponent } from "./about/about.component";
+import { NewExpenseComponent } from "./new-expense/new-expense.component";
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: "about",
     component: AboutComponent,
+  },
+  {
+    path: "newexpense",
+    component: NewExpenseComponent,
   },
 ];
 

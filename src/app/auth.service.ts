@@ -16,7 +16,7 @@ import { Group } from "./model/Group";
 export class AuthService {
   currentuser: User = null;
   isLoggedIn: Boolean = false;
-  currentgroup: String;
+  currentgroup: string;
   curGrp: Group;
   groups: Group[];
 
@@ -34,13 +34,9 @@ export class AuthService {
   groupRegister(grp) {
     return this.http.post("http://localhost:8080/group/create", grp);
   }
-  // patUpdate(pat) {
-  //   return this.http.put(
-  //     "http://localhost:8080/patient/update",
-  //     pat,
-  //     httpOptions
-  //   );
-  // }
+  newExpense(exp) {
+    return this.http.post("http://localhost:8080/expense/add", exp);
+  }
   // showPartners() {
   //   return this.http.get("http://localhost:8080/partners");
   // }

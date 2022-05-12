@@ -1,10 +1,10 @@
 export class User {
   userId: number;
-  name: String;
-  password: String;
-  email: String;
-  username: String;
-  groups: String;
+  name: string;
+  password: string;
+  email: string;
+  username: string;
+  groups: string;
   constructor() {
     this.userId = 0;
     this.name = "";
