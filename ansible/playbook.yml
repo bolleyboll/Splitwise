@@ -8,7 +8,8 @@
         dest: docker-compose.yml
 
     - name: Stop Docker compose
-      shell: docker-compose down
+      shell: killall containerd-shim
+      become: true
 
     - name: Remove Existing image
       docker_image:
