@@ -15,6 +15,7 @@ import { GroupComponent } from './group/group.component';
 import { NewGroupComponent } from './new-group/new-group.component';
 import { AboutComponent } from './about/about.component';
 import { NewExpenseComponent } from './new-expense/new-expense.component';
+import { NewMemberComponent } from './new-member/new-member.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NewExpenseComponent } from './new-expense/new-expense.component';
     GroupComponent,
     NewGroupComponent,
     AboutComponent,
-    NewExpenseComponent
+    NewExpenseComponent,
+    NewMemberComponent
   ],
   imports: [
     BrowserModule,

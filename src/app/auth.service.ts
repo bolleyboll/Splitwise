@@ -37,9 +37,9 @@ export class AuthService {
   newExpense(exp) {
     return this.http.post("http://localhost:8080/expense/add", exp);
   }
-  // showPartners() {
-  //   return this.http.get("http://localhost:8080/partners");
-  // }
+  getAllUsers() {
+    return this.http.get("http://localhost:8080/users");
+  }
   // showVaccines() {
   //   return this.http.get("http://localhost:8080/vaccines");
   // }
@@ -71,12 +71,11 @@ export class AuthService {
   //     httpOptions
   //   );
   // }
-  // getVaccD(disease) {
-  //   return this.http.get(
-  //     "http://localhost:8080/vaccine/disease/" + disease,
-  //     httpOptions
-  //   );
-  // }
+  addUserToGrp(username, groupId) {
+    return this.http.get(
+      "http://localhost:8080/group/add/" + username + "/" + groupId
+    );
+  }
   // getDistinctDisease() {
   //   return this.http.get("http://localhost:8080/distinct/disease");
   // }

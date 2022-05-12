@@ -25,26 +25,11 @@
       Register
     </button>
     <div class="dropdown" *ngIf="auth.currentuser">
-      <button
-        class="btn btn-primary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
+      <a class="btn btn-outline-secondary mr-2" routerLink="/dashboard"
+        >My Dashboard</a
       >
-        Profile
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" routerLink="/dashboard">My Profile</a>
-        <!-- <a class="dropdown-item" routerLink="edit/profile/patient">
-			  Edit Profile
-			</a>
-			<a class="dropdown-item text-danger" routerLink="delete/patient">
-			  Deactivate
-			</a> -->
-        <a class="dropdown-item" (click)="logout()" routerLink="/">Logout</a>
-      </div>
+      
+        <a class="btn btn-outline-secondary" (click)="logout()" routerLink="/">Logout</a>
     </div>
   </div>
 </nav>

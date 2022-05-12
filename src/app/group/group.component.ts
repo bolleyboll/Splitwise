@@ -33,6 +33,32 @@ export class GroupComponent implements OnInit {
 
     this.auth.getExpenses(this.auth.curGrp.groupId).subscribe((res: any) => {
       this.expenses = res;
+      console.log(this.expenses);
+
+      this.expenses.forEach((exp) => {
+        let arr = exp.splitBetween.split(", ");
+
+        for (let i = 0; i < arr.length; i++) {
+          let name, amt;
+          if (i == 0) {
+            if (!arr[i].split(": ")[0].startsWith("'")) {
+              name = arr[i].split(": ")[0].substring(1);
+              amt = arr[i].split(": ")[1];
+            } else {
+              name = arr[i].split(": ")[0].substring(0);
+              amt = arr[i].split(": ")[1];
+            }
+          } else if (i == arr.length - 1) {
+            name = arr[i].split(": ")[0].substring(1);
+            let test = arr[i].split(": ")[1];
+            amt = test.substring(0, test.length - 1);
+          } else {
+            name = arr[i].split(": ")[0];
+            amt = arr[i].split(": ")[1];
+          }
+          this.split[i] = name + " " + amt;
+        }
+      });
     });
   }
 }
