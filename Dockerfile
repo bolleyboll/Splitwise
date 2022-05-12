@@ -5,11 +5,13 @@ RUN mkdir -p /app
 WORKDIR /app
 
 COPY . .
+RUN rm -rf ./node_modules
 
 RUN npm install
 RUN npm run build --prod
 
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]
+RUN rm -rf /usr/share/nginx/html/*
 
 FROM nginx:alpine
 EXPOSE 80
