@@ -7,11 +7,10 @@
         src: docker-compose.yml
         dest: docker-compose.yml
 
-    - name: Stop Docker compose
+    - name: Stop already running docker compose
       shell: docker-compose down
-      become: true
 
-    - name: Remove Existing image
+    - name: Remove already existing image
       docker_image:
         name: patro30/frontend
         state: absent
@@ -19,7 +18,6 @@
     - name: Pull updated image
       docker_image:
         name: patro30/frontend
-        source: pull
 
     - name: Run docker compose
       shell: docker-compose up -d
