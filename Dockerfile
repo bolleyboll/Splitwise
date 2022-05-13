@@ -10,8 +10,6 @@ RUN rm -rf ./node_modules
 RUN npm install
 RUN npm run build --prod
 
-# CMD ["nginx", "-g", "daemon off;"]
-# RUN rm -rf /usr/share/nginx/html/*
 CMD ["npm", "start"]
 FROM nginx:alpine
 EXPOSE 80
