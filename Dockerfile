@@ -12,7 +12,7 @@ RUN npm run build --prod
 
 # CMD ["nginx", "-g", "daemon off;"]
 # RUN rm -rf /usr/share/nginx/html/*
-
+CMD ["npm", "start"]
 FROM nginx:alpine
 EXPOSE 80
 COPY --from=builder app/dist/splitwise usr/share/nginx/html
